@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gremlin.Net</name>
+    </assembly>
+    <members>
+        <member name="T:Gremlin.Net.Exceptions.ResponseException">
+            <summary>
+            The exception that is thrown when a response is received from Gremlin Server that indicates that an error occurred.
+            </summary>
+        </member>
+        <member name="T:Gremlin.Net.GremlinClient">
+            <summary>
+            Provides a mechanism for submitting Gremlin requests to one Gremlin Server.
+            </summary>
+        </member>
+        <member name="M:Gremlin.Net.GremlinClient.#ctor(Gremlin.Net.GremlinServer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gremlin.Net.GremlinClient"/> class for the specified Gremlin Server.
+            </summary>
+            <param name="gremlinServer">The <see cref="T:Gremlin.Net.GremlinServer"/> the requests should be sent to.</param>
+        </member>
+        <member name="P:Gremlin.Net.GremlinClient.NrConnections">
+            <summary>
+            Gets the number of open connections.
+            </summary>
+        </member>
+        <member name="M:Gremlin.Net.GremlinClient.SubmitAsync``1(Gremlin.Net.Messages.ScriptRequestMessage)">
+            <inheritdoc />
+        </member>
+        <member name="M:Gremlin.Net.GremlinClient.Dispose">
+            <inheritdoc />
+        </member>
+        <member name="M:Gremlin.Net.GremlinClient.Dispose(System.Boolean)">
+            <summary>
+            Releases the resources used by the <see cref="T:Gremlin.Net.GremlinClient"/> instance.
+            </summary>
+            <param name="disposing">Specifies whether managed resources should be released.</param>
+        </member>
+        <member name="T:Gremlin.Net.GremlinClientExtensions">
+            <summary>
+            Provides extension methods for the <see cref="T:Gremlin.Net.IGremlinClient"/> interface.
+            </summary>
+        </member>
+        <member name="M:Gremlin.Net.GremlinClientExtensions.SubmitWithSingleResultAsync``1(Gremlin.Net.IGremlinClient,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Submits a request message that consists of a script with bindings as an asynchronous operation where only a single result gets returned.
+            </summary>
+            <remarks>If multiple results are received from Gremlin Server, then only the first gets returned. Use <see cref="M:Gremlin.Net.GremlinClientExtensions.SubmitAsync``1(Gremlin.Net.IGremlinClient,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})"/> instead when you expect a collection of results.</remarks>
+            <typeparam name="T">The type of the expected result.</typeparam>
+            <param name="gremlinClient">The <see cref="T:Gremlin.Net.IGremlinClient"/> that submits the request.</param>
+            <param name="requestScript">The Gremlin request script to send.</param>
+            <param name="bindings">Bindings for parameters used in the requestScript.</param>
+            <returns>A single result received from the Gremlin Server.</returns>
+            <exception cref="T:Gremlin.Net.Exceptions.ResponseException">Thrown when a response is received from Gremlin Server that indicates that an error occurred.</exception>
+        </member>
+        <member name="M:Gremlin.Net.GremlinClientExtensions.SubmitWithSingleResultAsync``1(Gremlin.Net.IGremlinClient,Gremlin.Net.Messages.ScriptRequestMessage)">
+            <summary>
+            Submits a request message as an asynchronous operation where only a single result gets returned.
+            </summary>
+            <remarks>If multiple results are received from Gremlin Server, then only the first gets returned. Use <see cref="M:Gremlin.Net.GremlinClientExtensions.SubmitAsync``1(Gremlin.Net.IGremlinClient,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})"/> instead when you expect a collection of results.</remarks>
+            <typeparam name="T">The type of the expected result.</typeparam>
+            <param name="gremlinClient">The <see cref="T:Gremlin.Net.IGremlinClient"/> that submits the request.</param>
+            <param name="requestMessage">The <see cref="T:Gremlin.Net.Messages.ScriptRequestMessage"/> to send.</param>
+            <returns>A single result received from the Gremlin Server.</returns>
+            <exception cref="T:Gremlin.Net.Exceptions.ResponseException">Thrown when a response is received from Gremlin Server that indicates that an error occurred.</exception>
+        </member>
+        <member name="M:Gremlin.Net.GremlinClientExtensions.SubmitAsync(Gremlin.Net.IGremlinClient,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Submits a request message that consists of a script with bindings as an asynchronous operation without returning the result received from the Gremlin Server.
+            </summary>
+            <param name="gremlinClient">The <see cref="T:Gremlin.Net.IGremlinClient"/> that submits the request.</param>
+            <param name="requestScript">The Gremlin request script to send.</param>
+            <param name="bindings">Bindings for parameters used in the requestScript.</param>
+            <returns>The task object representing the asynchronous operation.</returns>
+            <exception cref="T:Gremlin.Net.Exceptions.ResponseException">Thrown when a response is received from Gremlin Server that indicates that an error occurred.</exception>
+        </member>
+        <member name="M:Gremlin.Net.GremlinClientExtensions.SubmitAsync(Gremlin.Net.IGremlinClient,Gremlin.Net.Messages.ScriptRequestMessage)">
+            <summary>
+            Submits a request message as an asynchronous operation without returning the result received from the Gremlin Server.
+            </summary>
+            <param name="gremlinClient">The <see cref="T:Gremlin.Net.IGremlinClient"/> that submits the request.</param>
+            <param name="requestMessage">The <see cref="T:Gremlin.Net.Messages.ScriptRequestMessage"/> to send.</param>
+            <returns>The task object representing the asynchronous operation.</returns>
+            <exception cref="T:Gremlin.Net.Exceptions.ResponseException">Thrown when a response is received from Gremlin Server that indicates that an error occurred.</exception>
+        </member>
+        <member name="M:Gremlin.Net.GremlinClientExtensions.SubmitAsync``1(Gremlin.Net.IGremlinClient,System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
+            <summary>
+            Submits a request message that consists of a script with bindings as an asynchronous operation.
+            </summary>
+            <typeparam name="T">The type of the expected results.</typeparam>
+            <param name="gremlinClient">The <see cref="T:Gremlin.Net.IGremlinClient"/> that submits the request.</param>
+            <param name="requestScript">The Gremlin request script to send.</param>
+            <param name="bindings">Bindings for parameters used in the requestScript.</param>
+            <returns>An enumerable collection of the data returned from the server.</returns>
+            <exception cref="T:Gremlin.Net.Exceptions.ResponseException">Thrown when a response is received from Gremlin Server that indicates that an error occurred.</exception>
+        </member>
+        <member name="T:Gremlin.Net.GremlinServer">
+            <summary>
+            Represents a Gremlin Server.
+            </summary>
+        </member>
+        <member name="M:Gremlin.Net.GremlinServer.#ctor(System.String,System.Int32,System.Boolean,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gremlin.Net.GremlinServer"/> class with the specified connection parameters.
+            </summary>
+            <param name="hostname">The hostname of the server.</param>
+            <param name="port">The port on which Gremlin Server can be reached.</param>
+            <param name="enableSsl">Specifies whether SSL should be enabled.</param>
+            <param name="username">The username to submit on requests that require authentication.</param>
+            <param name="password">The password to submit on requests that require authentication.</param>
+        </member>
+        <member name="P:Gremlin.Net.GremlinServer.Uri">
+            <summary>
+            Gets the URI of the Gremlin Server.
+            </summary>
+            <value>The WebSocket <see cref="T:System.Uri"/> that the Gremlin Server responds to.</value>
+        </member>
+        <member name="P:Gremlin.Net.GremlinServer.Username">
+            <summary>
+            Gets the username to submit on requests that require authentication.
+            </summary>
+        </member>
+        <member name="P:Gremlin.Net.GremlinServer.Password">
+            <summary>
+            Gets the password to submit on requests that require authentication.
+            </summary>
+        </member>
+        <member name="T:Gremlin.Net.IGremlinClient">
+            <summary>
+            Provides a mechanism for submitting Gremlin requests.
+            </summary>
+        </member>
+        <member name="M:Gremlin.Net.IGremlinClient.SubmitAsync``1(Gremlin.Net.Messages.ScriptRequestMessage)">
+            <summary>
+            Submits a request message as an asynchronous operation.
+            </summary>
+            <typeparam name="T">The type of the expected results.</typeparam>
+            <param name="requestMessage">The <see cref="T:Gremlin.Net.Messages.ScriptRequestMessage"/> to send.</param>
+            <returns>An enumerable collection of the data returned from the server.</returns>
+            <exception cref="T:Gremlin.Net.Exceptions.ResponseException">Thrown when a response is received from Gremlin Server that indicates that an error occurred.</exception>
+        </member>
+        <member name="T:Gremlin.Net.Messages.AuthenticationRequestArguments">
+            <summary>
+            Represents parameters to pass to Gremlin Server for a <see cref="T:Gremlin.Net.Messages.AuthenticationRequestMessage"/>.
+            </summary>
+        </member>
+        <member name="M:Gremlin.Net.Messages.AuthenticationRequestArguments.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gremlin.Net.Messages.AuthenticationRequestArguments"/> class.
+            </summary>
+            <param name="username">The username.</param>
+            <param name="password">The password.</param>
+        </member>
+        <member name="P:Gremlin.Net.Messages.AuthenticationRequestArguments.Sasl">
+            <summary>
+            Gets or sets the response to the server authentication challenge. This value is dependent on the SASL authentication mechanism required by the server.
+            </summary>
+            <value>The response to the server authentication challenge.</value>
+        </member>
+        <member name="T:Gremlin.Net.Messages.AuthenticationRequestMessage">
+            <summary>
+            Represents an authentication request message to send to a Gremlin Server.
+            </summary>
+        </member>
+        <member name="M:Gremlin.Net.Messages.AuthenticationRequestMessage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gremlin.Net.Messages.AuthenticationRequestMessage"/> class.
+            </summary>
+        </member>
+        <member name="P:Gremlin.Net.Messages.AuthenticationRequestMessage.Arguments">
+            <summary>
+            Gets or sets parameters for this <see cref="T:Gremlin.Net.Messages.AuthenticationRequestMessage"/> to pass to Gremlin Server.
+            </summary>
+        </member>
+        <member name="T:Gremlin.Net.Messages.RequestArguments">
+            <summary>
+            Represents parameters to pass to Gremlin Server.
+            </summary>
+        </member>
+        <member name="P:Gremlin.Net.Messages.RequestArguments.BatchSize">
+            <summary>
+            Gets or set the number of iterations each ResponseMessage should contain.
+            </summary>
+            <value>
+            When the result is an iterator this value defines the number of iterations each ResponseMessage should contain - overrides the resultIterationBatchSize server setting.
+            </value>
+        </member>
+        <member name="T:Gremlin.Net.Messages.RequestMessage">
+            <summary>
+            Represents a script request message to send to a Gremlin Server.
+            </summary>
+        </member>
+        <member name="P:Gremlin.Net.Messages.RequestMessage.RequestId">
+            <summary>
+            Gets the ID of this request message.
+            </summary>
+            <value>A UUID representing the unique identification for the request.</value>
+        </member>
+        <member name="P:Gremlin.Net.Messages.RequestMessage.Operation">
+            <summary>
+            Gets or sets the name of the operation that should be executed by the Gremlin Server.
+            </summary>
+            <value>The name of the "operation" to execute based on the available OpProcessor configured in the Gremlin Server.</value>
+        </member>
+        <member name="P:Gremlin.Net.Messages.RequestMessage.Processor">
+            <summary>
+            Gets or sets the name of the OpProcessor to utilize.
+            </summary>
+            <value>The name of the OpProcessor to utilize. This defaults to an empty string which represents the default OpProcessor for evaluating scripts.</value>
+        </member>
+        <member name="T:Gremlin.Net.Messages.ScriptRequestArguments">
+            <summary>
+            Represents parameters to pass to Gremlin Server for a <see cref="T:Gremlin.Net.Messages.ScriptRequestMessage"/>.
+            </summary>
+        </member>
+        <member name="P:Gremlin.Net.Messages.ScriptRequestArguments.GremlinScript">
+            <summary>
+            Gets or sets the Gremlin script to evaluate.
+            </summary>
+            <value>A <see cref="T:System.String"/> that contains the Gremlin script to evaluate.</value>
+        </member>
+        <member name="P:Gremlin.Net.Messages.ScriptRequestArguments.Bindings">
+            <summary>
+            Gets or sets the bindings for the <see cref="P:Gremlin.Net.Messages.ScriptRequestArguments.GremlinScript"/>.
+            </summary>
+            <value>A <see cref="T:System.Collections.Generic.Dictionary`2"/> to apply as variables in the context of the <see cref="P:Gremlin.Net.Messages.ScriptRequestArguments.GremlinScript"/>.</value>
+        </member>
+        <member name="P:Gremlin.Net.Messages.ScriptRequestArguments.Language">
+            <summary>
+            Gets or sets the flavor of Gremlin used (e.g. gremlin-groovy).
+            </summary>
+            <value>The default value is null which results in the default value of gremlin-groovy being used.</value>
+        </member>
+        <member name="P:Gremlin.Net.Messages.ScriptRequestArguments.Aliases">
+            <summary>
+            Gets or sets aliases that allow to bind names of Graph and TraversalSource to other names.
+            </summary>
+            <value>A <see cref="T:System.Collections.Generic.Dictionary`2"/> that allows globally bound Graph and TraversalSource objects to be aliased to different variable names for purposes of the current request. The value represents the name of the global variable and its key represents the new binding name as it will be referenced in the Gremlin query. For example, if the Gremlin Server defines two TraversalSource instances named g1 and g2, it would be possible to send an alias pair with key of "g" and value of "g2" and thus allow the script to refer to "g2" simply as "g".</value>
+        </member>
+        <member name="P:Gremlin.Net.Messages.ScriptRequestArguments.ScriptEvaluationTimeoutInMs">
+            <summary>
+            Gets or sets the override for the server setting that determines the maximum time to wait for a script to execute on the server.
+            </summary>
+            <value>The evaluation timeout value in milliseconds for this request message. The value can be null which avoids overriding the server setting.</value>
+        </member>
+        <member name="T:Gremlin.Net.Messages.ScriptRequestMessage">
+            <summary>
+            Represents a script request message to send to a Gremlin Server.
+            </summary>
+        </member>
+        <member name="M:Gremlin.Net.Messages.ScriptRequestMessage.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Gremlin.Net.Messages.ScriptRequestMessage"/> class.
+            </summary>
+        </member>
+        <member name="P:Gremlin.Net.Messages.ScriptRequestMessage.Arguments">
+            <summary>
+            Gets or sets parameters for this <see cref="T:Gremlin.Net.Messages.ScriptRequestMessage"/> to pass to Gremlin Server.
+            </summary>
+        </member>
+    </members>
+</doc>
