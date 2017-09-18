@@ -7045,11 +7045,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\Leona\\source\\repos\\com.essencify\\com.essencify.core\\com.essencify.core.csproj",
+      "projectUniqueName": "C:\\Users\\Leona\\source\\repos\\essencify\\com.essencify\\com.essencify.core\\com.essencify.core.csproj",
       "projectName": "com.essencify.core",
-      "projectPath": "C:\\Users\\Leona\\source\\repos\\com.essencify\\com.essencify.core\\com.essencify.core.csproj",
+      "projectPath": "C:\\Users\\Leona\\source\\repos\\essencify\\com.essencify\\com.essencify.core\\com.essencify.core.csproj",
       "packagesPath": "C:\\Users\\Leona\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Leona\\source\\repos\\com.essencify\\com.essencify.core\\obj\\",
+      "outputPath": "C:\\Users\\Leona\\source\\repos\\essencify\\com.essencify\\com.essencify.core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Leona\\AppData\\Roaming\\NuGet\\NuGet.Config",
