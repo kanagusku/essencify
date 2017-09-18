@@ -4,7 +4,7 @@ using System.Text;
 
 namespace com.essencify.test.UnitTests.Data
 {
-    class PersonRepositoryTest
+    public class PersonRepositoryTest
     {
     }
 }

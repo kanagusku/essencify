@@ -19,10 +19,13 @@ namespace com.essencify.data.classes
 
         public void Modify(IPerson personObj)
         {
-            using (var gremlinClient = new GremlinClient(this.GetServer()))
+            using (var Client = new DBClient(this.GetServer()))
             {
-                var result =
-                    await gremlinClient.SubmitWithSingleResultAsync<bool>("g.V().has('name', 'gremlin').hasNext()");
+                var result = Client.SubmitWithSingleResultAsync<bool>("g.addV('Person').property('" + nameof(personObj.Name) + "','" + personObj.Name + "')" +
+                                                                                      ".property('" + nameof(personObj.Name) + "','" + personObj.Name + "')" +
+                                                                                      ".property('" + nameof(personObj.Name) + "','" + personObj.Name + "')" +
+                                                                                      ".property('" + nameof(personObj.Name) + "','" + personObj.Name + "')" +
+                                                                                      ".next()");
             }
         }
 

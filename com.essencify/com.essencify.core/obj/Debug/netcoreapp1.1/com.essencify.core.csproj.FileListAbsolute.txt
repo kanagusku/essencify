@@ -1,9 +1,0 @@
-C:\Users\Leona\source\repos\essencify\com.essencify\com.essencify.core\bin\Debug\netcoreapp1.1\com.essencify.core.deps.json
-C:\Users\Leona\source\repos\essencify\com.essencify\com.essencify.core\bin\Debug\netcoreapp1.1\com.essencify.core.runtimeconfig.json
-C:\Users\Leona\source\repos\essencify\com.essencify\com.essencify.core\bin\Debug\netcoreapp1.1\com.essencify.core.runtimeconfig.dev.json
-C:\Users\Leona\source\repos\essencify\com.essencify\com.essencify.core\bin\Debug\netcoreapp1.1\com.essencify.core.dll
-C:\Users\Leona\source\repos\essencify\com.essencify\com.essencify.core\bin\Debug\netcoreapp1.1\com.essencify.core.pdb
-C:\Users\Leona\source\repos\essencify\com.essencify\com.essencify.core\obj\Debug\netcoreapp1.1\com.essencify.core.csproj.CoreCompileInputs.cache
-C:\Users\Leona\source\repos\essencify\com.essencify\com.essencify.core\obj\Debug\netcoreapp1.1\com.essencify.core.AssemblyInfo.cs
-C:\Users\Leona\source\repos\essencify\com.essencify\com.essencify.core\obj\Debug\netcoreapp1.1\com.essencify.core.dll
-C:\Users\Leona\source\repos\essencify\com.essencify\com.essencify.core\obj\Debug\netcoreapp1.1\com.essencify.core.pdb

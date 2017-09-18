@@ -12,4 +12,14 @@
     <PackageReference Include="MSTest.TestFramework" Version="1.1.17" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\com.essencify.core\com.essencify.core.csproj" />
+    <ProjectReference Include="..\com.essencify.dashboard\com.essencify.dashboard.csproj" />
+    <ProjectReference Include="..\com.essencify.data\com.essencify.data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="IntegrationTests\" />
+  </ItemGroup>
+
 </Project>
