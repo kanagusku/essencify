@@ -12,24 +12,26 @@ namespace com.essencify.data.classes
 {
     public class PersonRepository : Repository, IPersonRepository
     {
-        public PersonRepository()
+
+
+        public PersonRepository(GraphOptions opts)
         {
-            this.Initialize("",8080,"","");
+            this.Initialize(opts.GraphHostName, opts.GraphPort,opts.GraphUserName,opts.GraphPassword);
         }
 
-        public void Modify(IPerson personObj)
+        public async void RegisterAsync(IPerson personObj)
         {
             using (var Client = new DBClient(this.GetServer()))
             {
-                var result = Client.SubmitWithSingleResultAsync<bool>("g.addV('Person').property('" + nameof(personObj.Name) + "','" + personObj.Name + "')" +
-                                                                                      ".property('" + nameof(personObj.Name) + "','" + personObj.Name + "')" +
-                                                                                      ".property('" + nameof(personObj.Name) + "','" + personObj.Name + "')" +
-                                                                                      ".property('" + nameof(personObj.Name) + "','" + personObj.Name + "')" +
+                var result = await Client.SubmitWithSingleResultAsync<bool>("g.addV('" + personObj.Name + "').property('" + nameof(personObj.Name) + "','" + personObj.Name + "')" +
+                                                                                      ".property('" + nameof(personObj.BirthDate) + "','" + personObj.BirthDate + "')" +
+                                                                                      ".property('" + nameof(personObj.OfficialPosition) + "','" + personObj.OfficialPosition + "')" +
+                                                                                      ".property('" + nameof(personObj.Role) + "','" + personObj.Role + "')" +
                                                                                       ".next()");
             }
         }
 
-        void IPersonRepository.Register(IPerson personObj)
+        void IPersonRepository.Modify(IPerson personObj)
         {
             throw new NotImplementedException();
         }

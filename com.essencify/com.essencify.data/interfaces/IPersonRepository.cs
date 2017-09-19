@@ -9,7 +9,7 @@ namespace com.essencify.data.interfaces
 {
     public interface IPersonRepository
     {
-        void Register(IPerson personObj);
+        void RegisterAsync(IPerson personObj);
         void Modify(IPerson personObj);
        
     }

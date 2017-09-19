@@ -1,3 +1,4 @@
 toingore.txt
 com.essencify/*/obj/*
 com.essencify/*/bin/*
+com.essencify/.vs/*
